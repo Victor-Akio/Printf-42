@@ -6,16 +6,15 @@
 /*   By: vminomiy <vminomiy@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 21:14:00 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/03/04 06:18:36 by vminomiy         ###   ########.fr       */
+/*   Updated: 2020/03/04 10:31:08 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../includes/ft_printf.h"
 
 static t_flags		ft_flaginit(void)
 {
-	t_flags flags;
+	t_flags			flags;
 
 	flags.minus = 0;
 	flags.zero = 0;
@@ -26,7 +25,8 @@ static t_flags		ft_flaginit(void)
 	return (flags);
 }
 
-static int		ft_check(const char *str, int i, t_flags *flags, va_list args)
+static int			ft_check(const char *str, int i, t_flags *flags,
+	va_list args)
 {
 	while (str[i])
 	{
@@ -53,11 +53,11 @@ static int		ft_check(const char *str, int i, t_flags *flags, va_list args)
 	return (i);
 }
 
-int				ft_pick_args(const char *str, va_list args)
+int					ft_pick_args(const char *str, va_list args)
 {
-	t_flags		flags;
-	int			i;
-	int			count;
+	t_flags			flags;
+	int				i;
+	int				count;
 
 	i = 0;
 	count = 0;
@@ -79,11 +79,11 @@ int				ft_pick_args(const char *str, va_list args)
 	return (count);
 }
 
-int				ft_printf(const char *format, ...)
+int					ft_printf(const char *format, ...)
 {
-	va_list		args;
-	int			count;
-	char		*str;
+	va_list			args;
+	int				count;
+	char			*str;
 
 	count = 0;
 	if (!(str = ft_strdup(format)))

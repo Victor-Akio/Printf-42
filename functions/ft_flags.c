@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 11:56:55 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/19 16:45:57 by vminomiy         ###   ########.fr       */
+/*   Updated: 2020/03/04 07:13:09 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_flags			ft_minus_flags(t_flags flags)
 
 t_flags			ft_isdigit_flags(char c, t_flags flags)
 {
-	if (flags.width == 1)
+	if (flags.star == 1)
 		flags.width = 0;
 	flags.width = ((flags.width * 10) + (c - '0'));
 	return (flags);

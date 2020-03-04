@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_di.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vminomiy <vminomiy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vminomiy <vminomiy@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 17:32:05 by vminomiy          #+#    #+#             */
-/*   Updated: 2020/02/20 19:20:56 by vminomiy         ###   ########.fr       */
+/*   Updated: 2020/03/04 07:18:49 by vminomiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ static int	ft_print_int(char *str, int num, t_flags flags)
 		flags.width -= flags.dot;
 		count += ft_print_width(flags.width, 0, 0);
 	}
+	else if (flags.zero == 1)
+		count += ft_print_width(flags.width, ft_strlen(str), 1);
 	else
-		count += ft_print_width(flags.width, 0, 0);
+		count += ft_print_width(flags.width, ft_strlen(str), 0);
 	if (flags.minus == 0)
 		count += ft_width_di(str, num, flags);
 	return (count);
